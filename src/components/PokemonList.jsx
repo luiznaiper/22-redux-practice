@@ -3,6 +3,12 @@ import { PokemonCard } from './PokemonCard';
 import './PokemonList.css';
 
 const PokemonList = ({ pokemons }) => {
+  const getPokemonAbilities = (abilities) => {
+    const abilitiesArray = abilities
+      .map((ability) => ability.ability.name)
+      .join(' - ');
+    return abilitiesArray;
+  };
   return (
     <div className="PokemonList">
       {pokemons.map((pokemon) => {
@@ -11,6 +17,7 @@ const PokemonList = ({ pokemons }) => {
             name={pokemon.name}
             key={pokemon.name}
             image={pokemon.sprites.front_default}
+            abilities={getPokemonAbilities(pokemon.abilities)}
           />
         );
       })}
