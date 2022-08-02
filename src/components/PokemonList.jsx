@@ -9,6 +9,10 @@ const PokemonList = ({ pokemons }) => {
       .join(' - ');
     return abilitiesArray;
   };
+  const getPokemonTypes = (types) => {
+    const typesArray = types.map((type) => type.type.name).join(' - ');
+    return typesArray;
+  };
   return (
     <div className="PokemonList">
       {pokemons.map((pokemon) => {
@@ -18,6 +22,7 @@ const PokemonList = ({ pokemons }) => {
             key={pokemon.name}
             image={pokemon.sprites.front_default}
             abilities={getPokemonAbilities(pokemon.abilities)}
+            types={getPokemonTypes(pokemon.types)}
           />
         );
       })}
