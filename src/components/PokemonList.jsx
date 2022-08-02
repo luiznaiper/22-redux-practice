@@ -23,6 +23,8 @@ const PokemonList = ({ pokemons }) => {
             image={pokemon.sprites.front_default}
             abilities={getPokemonAbilities(pokemon.abilities)}
             types={getPokemonTypes(pokemon.types)}
+            id={pokemon.id}
+            favorite={pokemon.favorite}
           />
         );
       })}
