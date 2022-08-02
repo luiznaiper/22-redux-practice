@@ -10,7 +10,6 @@ import './App.css';
 
 function App() {
   const pokemons = useSelector((state) => state.pokemons);
-  console.log(pokemons);
   const dispatch = useDispatch();
   useEffect(() => {
     const fetchPokemons = async () => {
