@@ -12,8 +12,8 @@ export const pokemonsReducer = (state = initialState, action) => {
       // return { ...state, pokemons: action.payload };
       return state.setIn(['pokemons'], fromJS(action.payload));
 
-    // case SET_LOADING:
-    //   return { ...state, loading: action.payload };
+    case SET_LOADING:
+      return state.setIn(['loading'], fromJS(action.payload));
 
     case SET_FAVORITE:
       const currentPokemonIndex = state.get('pokemons').findIndex((pokemon) => {

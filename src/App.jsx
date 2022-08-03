@@ -10,8 +10,7 @@ import './App.css';
 
 function App() {
   const pokemons = useSelector((state) => state.get('pokemons')).toJS();
-  // const loading = useSelector((state) => state.loading);
-  const loading = false;
+  const loading = useSelector((state) => state.get('loading'));
   const dispatch = useDispatch();
 
   useEffect(() => {
